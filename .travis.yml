@@ -5,8 +5,10 @@ node_js:
   - 8
 sudo: false
 before_install:
-  - curl -L https://unpkg.com/@pnpm/self-installer | node
+  - npm i -g npm
 install:
-  - pnpm install
+  # The only reason pnpm is not installed globally
+  # is to test that @pnpm/exec can install it
+  - npx pnpm install
 script:
   - npm test

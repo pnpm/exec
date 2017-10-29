@@ -10,7 +10,7 @@
   "scripts": {
     "md": "mos",
     "lint": "tslint -c tslint.json --project .",
-    "test": "mos test && npm run lint",
+    "test": "mos test && npm run lint && rimraf test/fixture/node_modules && ts-node test",
     "prepublishOnly": "tsc"
   },
   "repository": {
@@ -36,8 +36,12 @@
   },
   "homepage": "https://github.com/pnpm/exec#readme",
   "devDependencies": {
+    "@types/tape": "^4.2.31",
     "mos": "^2.0.0-alpha.3",
     "mos-plugin-readme": "^1.0.4",
+    "rimraf": "^2.6.2",
+    "tape": "^4.8.0",
+    "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
     "typescript": "^2.5.3"
   },
@@ -50,8 +54,12 @@
     }
   },
   "dependencies": {
+    "@types/got": "^7.1.4",
     "@types/node": "^8.0.47",
+    "@types/tempy": "^0.1.0",
     "command-exists": "^1.2.2",
-    "cross-spawn": "^5.1.0"
+    "cross-spawn": "^5.1.0",
+    "got": "^7.1.0",
+    "tempy": "^0.2.1"
   }
 }
