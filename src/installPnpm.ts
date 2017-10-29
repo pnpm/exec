@@ -2,11 +2,9 @@ import spawn = require('cross-spawn')
 import fs = require('fs')
 import got = require('got')
 import path = require('path')
-import tempy = require('tempy')
 
 export default async () => {
-  const tempDir = tempy.directory()
-  const installFile = path.join(tempDir, 'install.js')
+  const installFile = path.join(__dirname, 'install.js')
 
   await new Promise((resolve, reject) => {
     got.stream('https://unpkg.com/@pnpm/self-installer')
