@@ -1,5 +1,7 @@
 # @pnpm/exec
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pnpm/exec.svg)](https://greenkeeper.io/)
+
 > Executes pnpm. If pnpm is not installed, installs it first
 
 <!--@shields('npm', 'travis')-->
