@@ -5,11 +5,11 @@ import path = require('path')
 import tempy = require('tempy')
 
 export default async () => {
-  const tempDir = await tempy.directoryAsync()
+  const tempDir = tempy.directory()
   const installFile = path.join(tempDir, 'install.js')
 
-  return new Promise((resolve, reject) => {
-    got.stream('todomvc.com')
+  await new Promise((resolve, reject) => {
+    got.stream('https://unpkg.com/@pnpm/self-installer')
       .pipe(fs.createWriteStream(installFile))
       .on('error', reject)
       .on('close', () => {

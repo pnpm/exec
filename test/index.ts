@@ -10,5 +10,8 @@ test('execPnpm()', async t => {
       t.ok(require(`${fixtureDir}/findsDep`)())
       t.end()
     })
-    .catch(t.end)
+    .catch(err => {
+      console.error(err)
+      t.fail()
+    })
 })

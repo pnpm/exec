@@ -10,7 +10,11 @@ export default async function (
 ) {
   opts = opts || {}
   const cwd = opts.cwd || process.cwd()
-  if (!await commandExists('pnpm')) {
+  try {
+    await commandExists('pnpm')
+  } catch (err) {
+    // An error meam that pnpm does not exist
+    // so lets' install it
     await installPnpm()
   }
   await pnpmExec({
