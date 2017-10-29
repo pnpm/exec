@@ -13,7 +13,7 @@ export default async function (
   try {
     await commandExists('pnpm')
   } catch (err) {
-    // An error meam that pnpm does not exist
+    // An error means that pnpm does not exist
     // so lets' install it
     await installPnpm()
   }
