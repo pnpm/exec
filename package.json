@@ -1,6 +1,6 @@
 {
   "name": "@pnpm/exec",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Executes pnpm. If pnpm is not installed, installs it first",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
