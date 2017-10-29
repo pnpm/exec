@@ -1,0 +1,57 @@
+{
+  "name": "@pnpm/exec",
+  "version": "0.0.0",
+  "description": "Executes pnpm. If pnpm is not installed, installs it first",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "md": "mos",
+    "lint": "tslint -c tslint.json --project .",
+    "test": "mos test && npm run lint",
+    "prepublishOnly": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnpm/exec.git"
+  },
+  "keywords": [
+    "pnpm",
+    "exec"
+  ],
+  "author": {
+    "name": "Zoltan Kochan",
+    "email": "z@kochan.io",
+    "url": "https://www.kochan.io/",
+    "twitter": "ZoltanKochan"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pnpm/exec/issues"
+  },
+  "homepage": "https://github.com/pnpm/exec#readme",
+  "devDependencies": {
+    "mos": "^2.0.0-alpha.3",
+    "mos-plugin-readme": "^1.0.4",
+    "tslint": "^5.8.0",
+    "typescript": "^2.5.3"
+  },
+  "mos": {
+    "plugins": [
+      "readme"
+    ],
+    "installation": {
+      "useShortAlias": true
+    }
+  },
+  "dependencies": {
+    "@types/node": "^8.0.47",
+    "command-exists": "^1.2.2",
+    "cross-spawn": "^5.1.0"
+  }
+}
