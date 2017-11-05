@@ -1,5 +1,5 @@
 'use strict'
-const pnpm = require('./lib').default
+const pnpm = require('@pnpm/exec').default
 
 pnpm(['install'])
   .then(() => console.log('Done'))

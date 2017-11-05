@@ -1,6 +1,6 @@
 import path = require('path')
 import test = require('tape')
-import exec from '../src'
+import exec from '@pnpm/exec'
 
 const fixtureDir = path.join(__dirname, 'fixture')
 

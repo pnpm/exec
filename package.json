@@ -10,6 +10,7 @@
   "scripts": {
     "md": "mos",
     "lint": "tslint -c tslint.json --project .",
+    "pretest": "preview",
     "test": "mos test && npm run lint && rimraf test/fixture/node_modules && ts-node test",
     "prepublishOnly": "tsc"
   },
@@ -39,6 +40,7 @@
     "@types/tape": "^4.2.31",
     "mos": "^2.0.0-alpha.3",
     "mos-plugin-readme": "^1.0.4",
+    "package-preview": "^0.2.3",
     "rimraf": "^2.6.2",
     "tape": "^4.8.0",
     "ts-node": "^3.3.0",
