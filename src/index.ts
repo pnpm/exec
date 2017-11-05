@@ -6,7 +6,7 @@ export default async function (
   args: string[],
   opts?: {
     cwd?: string,
-    env?: object,
+    env?: NodeJS.ProcessEnv,
   },
 ) {
   opts = opts || {}
@@ -30,7 +30,7 @@ async function pnpmExec (
   opts: {
     args: string[],
     cwd: string,
-    env: object,
+    env: NodeJS.ProcessEnv,
   },
 ) {
   return new Promise((resolve, reject) => {
