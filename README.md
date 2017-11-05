@@ -22,6 +22,17 @@ pnpm(['install'])
   .catch(console.error.bind(console))
 ```
 
+## API
+
+### `pnpmExec(args, [opts])`
+
+Executes pnpm. If pnpm is not available, installs it first.
+
+- `args` - _string\[]_ - list of string arguments.
+- `[opts]` - _object_
+  - `cwd` - _string_ - current working directory of the child process.
+  - `env` - _object_ - environment key-value pairs. By default the value of the current `process.env`.
+
 ## License
 
 [MIT](./LICENSE) © [Zoltan Kochan](https://www.kochan.io/)

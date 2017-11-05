@@ -6,10 +6,12 @@ export default async function (
   args: string[],
   opts?: {
     cwd?: string,
+    env?: object,
   },
 ) {
   opts = opts || {}
   const cwd = opts.cwd || process.cwd()
+  const env = opts.env || process.env
   try {
     await commandExists('pnpm')
   } catch (err) {
@@ -20,6 +22,7 @@ export default async function (
   await pnpmExec({
     args,
     cwd,
+    env,
   })
 }
 
@@ -27,11 +30,13 @@ async function pnpmExec (
   opts: {
     args: string[],
     cwd: string,
+    env: object,
   },
 ) {
   return new Promise((resolve, reject) => {
     const proc = spawn('pnpm', opts.args, {
       cwd: opts.cwd,
+      env: opts.env,
       stdio: 'inherit',
     })
 
