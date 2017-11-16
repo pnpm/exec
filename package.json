@@ -60,6 +60,6 @@
     "@types/node": "^8.0.47",
     "command-exists": "^1.2.2",
     "cross-spawn": "^5.1.0",
-    "got": "^7.1.0"
+    "got": "^8.0.0"
   }
 }
