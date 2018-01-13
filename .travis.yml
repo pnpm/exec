@@ -12,3 +12,5 @@ install:
   - npx pnpm install
 script:
   - npm test
+notifications:
+  email: false
