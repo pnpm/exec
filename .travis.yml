@@ -6,7 +6,7 @@ node_js:
   - 10
 sudo: false
 before_install:
-  - npm i -g npm
+  - npm i -g npm@latest-5
 install:
   # The only reason pnpm is not installed globally
   # is to test that @pnpm/exec can install it
