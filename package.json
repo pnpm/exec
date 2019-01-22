@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@pnpm/self-installer": "^2.0.0",
-    "@types/got": "^8.3.1",
+    "@types/got": "^9.0.0",
     "@types/node": "^10.0.8",
     "command-exists": "^1.2.2",
     "cross-spawn": "^6.0.0"
