@@ -9,7 +9,7 @@
 ## Installation
 
 ```sh
-npm i -S @pnpm/exec
+pnpm add @pnpm/exec
 ```
 
 ## Usage
