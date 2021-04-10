@@ -1,13 +1,13 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@pnpm/self-installer': ^2.0.0
   '@types/got': ^9.6.11
   '@types/node': ^14.14.6
   '@types/tape': ^4.2.31
   command-exists: ^1.2.2
   cross-spawn: ^7.0.3
   package-preview: ^3.0.0
+  pnpm: ^6.0.1
   rimraf: ^3.0.2
   tape: ^5.0.1
   ts-node: ^9.0.0
@@ -15,9 +15,9 @@ specifiers:
   typescript: ^4.0.5
 
 dependencies:
-  '@pnpm/self-installer': 2.1.0
   command-exists: 1.2.9
   cross-spawn: 7.0.3
+  pnpm: 6.0.1
 
 devDependencies:
   '@types/got': 9.6.11
@@ -65,6 +65,7 @@ packages:
     resolution: {integrity: sha512-bfMgLFmg33kY1XBPBgdkbpld6fSeyt6iAlXbIMioArHd1t58EAMFmM2cYZQt4I2MguUpLRDlZwOpYYmirDHhsg==}
     engines: {node: '>=4'}
     hasBin: true
+    dev: true
 
   /@types/got/8.3.5:
     resolution: {integrity: sha512-AaXSrIF99SjjtPVNmCmYb388HML+PKEJb/xmj4SbL2ZO0hHuETZZzyDIKfOqaEoAHZEuX4sC+FRFrHYJoIby6A==}
@@ -1020,6 +1021,12 @@ packages:
     resolution: {integrity: sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=}
     engines: {node: '>=4'}
     dev: true
+
+  /pnpm/6.0.1:
+    resolution: {integrity: sha512-DUhTyD1jczFlzz3zIlYAWHrktuWcrhJVMisvMqvZ1ktPCfvDcBW8yw0AytrlHdvPqoV2IiZK4Grzb1blFsxfyw==}
+    engines: {node: '>=12.17'}
+    hasBin: true
+    dev: false
 
   /process-nextick-args/2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}

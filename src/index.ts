@@ -1,6 +1,5 @@
 import commandExists = require('command-exists')
 import spawn = require('cross-spawn')
-import installPnpm from './installPnpm'
 
 export default async function (
   args: string[],
@@ -14,16 +13,20 @@ export default async function (
   const env = opts.env || process.env
   try {
     await commandExists('pnpm')
+    await pnpmExec({
+      args,
+      cwd,
+      env,
+    })
   } catch (err) {
     // An error means that pnpm does not exist
     // so lets' install it
-    await installPnpm()
+    await pnpmExec({
+      args: ['node', require.resolve('pnpm/bin/pnpm.cjs'), ...args],
+      cwd,
+      env,
+    })
   }
-  await pnpmExec({
-    args,
-    cwd,
-    env,
-  })
 }
 
 async function pnpmExec (
