@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "tslint -c tslint.json --project .",
     "pretest": "preview",
-    "test": "npm run lint && rimraf test/fixture/node_modules && ts-node test --type-check",
+    "test": "pnpm pretest && npm run lint && rimraf test/fixture/node_modules && ts-node test --type-check",
     "prepublishOnly": "tsc"
   },
   "repository": {
