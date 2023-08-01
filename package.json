@@ -49,6 +49,6 @@
   "dependencies": {
     "command-exists": "^1.2.2",
     "cross-spawn": "^7.0.3",
-    "pnpm": "^6.0.1"
+    "pnpm": "^7.33.4"
   }
 }
