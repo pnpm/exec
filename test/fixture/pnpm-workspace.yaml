@@ -1,0 +1,2 @@
+# Marks the fixture as its own pnpm workspace root so installs run in
+# isolation from the package's outer workspace.

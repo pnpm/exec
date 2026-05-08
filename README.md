@@ -2,9 +2,7 @@
 
 > Executes pnpm. If pnpm is not installed, installs it first
 
-<!--@shields('npm', 'travis')-->
-[![npm version](https://img.shields.io/npm/v/@pnpm/exec.svg)](https://www.npmjs.com/package/@pnpm/exec) [![Build Status](https://img.shields.io/travis/pnpm/exec/master.svg)](https://travis-ci.org/pnpm/exec)
-<!--/@-->
+[![npm version](https://img.shields.io/npm/v/@pnpm/exec.svg)](https://www.npmjs.com/package/@pnpm/exec)
 
 ## Installation
 
@@ -15,11 +13,10 @@ pnpm add @pnpm/exec
 ## Usage
 
 ```ts
-const pnpm = require('@pnpm/exec').default
+import { pnpmExec } from '@pnpm/exec'
 
-pnpm(['install'])
-  .then(() => console.log('Done'))
-  .catch(console.error.bind(console))
+await pnpmExec(['install'])
+console.log('Done')
 ```
 
 ## API
