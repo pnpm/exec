@@ -1,6 +1,4 @@
-'use strict'
-const pnpm = require('@pnpm/exec').default
+import { pnpmExec } from '@pnpm/exec'
 
-pnpm(['install'])
-  .then(() => console.log('Done'))
-  .catch(console.error.bind(console))
+await pnpmExec(['install'])
+console.log('Done')

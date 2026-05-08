@@ -1,24 +1,16 @@
 {
   "compilerOptions": {
-    "removeComments": false,
-    "preserveConstEnums": true,
-    "sourceMap": true,
     "declaration": true,
-    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "noImplicitReturns": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "allowSyntheticDefaultImports": true,
-    "strictNullChecks": true,
-    "target": "es2019",
     "outDir": "lib",
-    "module": "commonjs",
-    "moduleResolution": "node"
+    "rootDir": "src",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2022",
+    "verbatimModuleSyntax": true
   },
-  "include": [
-    "src/**/*.ts",
-    "typings/**/*.d.ts"
-  ],
-  "atom": {
-    "rewriteTsconfig": true
-  }
+  "include": ["src/**/*.ts"]
 }

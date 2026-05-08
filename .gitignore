@@ -12,6 +12,9 @@ coverage
 
 fixtures
 .tmp
+
+# Generated when the fixture's pnpm install runs in tests
+test/fixture/pnpm-lock.yaml
 _docpress
 
 lib

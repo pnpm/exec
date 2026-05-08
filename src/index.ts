@@ -1,27 +1,24 @@
-import commandExists = require('command-exists')
-import spawn = require('cross-spawn')
+import { createRequire } from 'node:module'
 
-export default async function (
-  args: string[],
-  opts?: {
-    cwd?: string,
-    env?: NodeJS.ProcessEnv,
-  },
-) {
-  opts = opts || {}
-  const cwd = opts.cwd || process.cwd()
-  const env = opts.env || process.env
+import commandExists from 'command-exists'
+import spawn from 'cross-spawn'
+
+const require = createRequire(import.meta.url)
+
+export type PnpmExecOptions = {
+  cwd?: string
+  env?: NodeJS.ProcessEnv
+}
+
+export async function pnpmExec (args: string[], opts: PnpmExecOptions = {}): Promise<void> {
+  const cwd = opts.cwd ?? process.cwd()
+  const env = opts.env ?? process.env
   try {
     await commandExists('pnpm')
-    await pnpmExec({
-      args,
-      cwd,
-      env,
-    })
-  } catch (err) {
-    // An error means that pnpm does not exist
-    // so lets' install it
-    await pnpmExec({
+    await spawnPnpm({ args, cwd, env })
+  } catch {
+    // pnpm is not on PATH — run the bundled binary instead
+    await spawnPnpm({
       args: ['node', require.resolve('pnpm/bin/pnpm.cjs'), ...args],
       cwd,
       env,
@@ -29,13 +26,7 @@ export default async function (
   }
 }
 
-async function pnpmExec (
-  opts: {
-    args: string[],
-    cwd: string,
-    env: NodeJS.ProcessEnv,
-  },
-) {
+function spawnPnpm (opts: { args: string[], cwd: string, env: NodeJS.ProcessEnv }): Promise<void> {
   return new Promise((resolve, reject) => {
     const proc = spawn('pnpm', opts.args, {
       cwd: opts.cwd,
@@ -44,12 +35,12 @@ async function pnpmExec (
     })
 
     proc.on('error', reject)
-
-    proc.on('close', (code: number) => {
-      if (code > 0) {
-        return reject(new Error(`Exit code: ${code}`))
+    proc.on('close', (code) => {
+      if (code != null && code > 0) {
+        reject(new Error(`Exit code: ${code}`))
+        return
       }
-      return resolve()
+      resolve()
     })
   })
 }
